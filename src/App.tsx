@@ -78,15 +78,6 @@ export default function App() {
     (item) => item.leftoverStock < item.neededAverageQuantity * 0.5
   ).length;
 
-  const tabImages: { [key: number]: string } = {
-    0: '/src/assets/images/steel_furnace_1782199526168.jpg',
-    1: '/src/assets/images/steel_warehouse_1782199580414.jpg',
-    2: '/src/assets/images/steel_furnace_1782199526168.jpg',
-    3: '/src/assets/images/steel_workers_1782199544237.jpg',
-    4: '/src/assets/images/steel_warehouse_1782199580414.jpg',
-    5: '/src/assets/images/steel_engineers_1782199562938.jpg'
-  };
-
   if (!currentUser) {
     return (
       <AccessControl 
@@ -117,15 +108,6 @@ export default function App() {
           <div className="block md:hidden border-b border-slate-100 bg-slate-50" id="mobile-tabs-toggling-bar">
             <div className="flex items-center justify-between px-4 py-2.5">
               <div className="flex items-center gap-2.5">
-                {/* Active Tab tiny industrial thumbnail */}
-                <div className="relative w-8 h-6 rounded border border-[#ff8c00] overflow-hidden shrink-0 shadow-sm">
-                  <img 
-                    src={tabImages[activeTab]} 
-                    alt="" 
-                    className="w-full h-full object-cover filter brightness-[0.85]" 
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
                 <span className="text-[#002d62]">
                   {getTabIcon(activeTab)}
                 </span>
@@ -180,17 +162,6 @@ export default function App() {
                         id={`mob-nav-tab-${idx}`}
                       >
                         <div className="flex items-center gap-3">
-                          {/* Mini Industrial Thumbnail */}
-                          <div className={`relative w-9 h-7 rounded overflow-hidden shrink-0 border ${
-                            isSelected ? 'border-[#ff8c00] shadow' : 'border-slate-200'
-                          }`}>
-                            <img 
-                              src={tabImages[idx]} 
-                              alt="" 
-                              className="w-full h-full object-cover filter brightness-[0.85]" 
-                              referrerPolicy="no-referrer"
-                            />
-                          </div>
                           <span className={isSelected ? 'text-[#002d62]' : 'text-slate-400'}>
                             {getTabIcon(idx)}
                           </span>
@@ -229,19 +200,6 @@ export default function App() {
                   }`}
                   id={`nav-tab-${idx}`}
                 >
-                  {/* Mini Industrial Thumbnail */}
-                  <div className={`relative w-9 h-7 rounded border shadow-sm overflow-hidden shrink-0 ${
-                    isSelected ? 'border-[#ff8c00] ring-1 ring-[#ff8c00]/30' : 'border-indigo-100'
-                  } transition-all duration-300`}>
-                    <img 
-                      src={tabImages[idx]} 
-                      alt="" 
-                      className="w-full h-full object-cover filter brightness-[0.85] contrast-[1.05]" 
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-blue-900/10 mix-blend-color" />
-                  </div>
-
                   <span className={isSelected ? 'text-[#002d62]' : 'text-slate-400'}>
                     {getTabIcon(idx)}
                   </span>

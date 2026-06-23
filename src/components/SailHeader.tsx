@@ -16,16 +16,6 @@ export const SailHeader: React.FC<SailHeaderProps> = ({
   activeTab, 
   tabNames 
 }) => {
-  // Mapping generated image paths to each active tab
-  const tabBannerImages: { [key: number]: string } = {
-    0: '/src/assets/images/steel_furnace_1782199526168.jpg', // Tab 1: Enter Items
-    1: '/src/assets/images/steel_warehouse_1782199580414.jpg', // Tab 2: Tracking / Search
-    2: '/src/assets/images/steel_furnace_1782199526168.jpg', // Tab 3: Alerts / Low Stock (molten / furnace warning)
-    3: '/src/assets/images/steel_workers_1782199544237.jpg', // Tab 4: Refill Order (workers working)
-    4: '/src/assets/images/steel_warehouse_1782199580414.jpg', // Tab 5: Issued / Selling (warehouse / issue)
-    5: '/src/assets/images/steel_engineers_1782199562938.jpg', // Tab 6: History & Analytics (engineers working)
-  };
-
   const tabDescriptions: { [key: number]: string } = {
     0: 'Enter and catalog new steel items, grades, structural parameters, and manufacturer units.',
     1: 'Quick real-time stock inquiry system. Retrieve leftover levels, specifications, and safety balances.',
@@ -108,24 +98,14 @@ export const SailHeader: React.FC<SailHeaderProps> = ({
 
       </div>
 
-      {/* Dynamic Tab-Specific Header Image Banner */}
-      <div className="relative h-44 sm:h-52 w-full bg-slate-900 overflow-hidden" id="tab-hero-banner">
+      {/* Dynamic Tab-Specific Header Industrial Gradient Banner (No Background Images) */}
+      <div className="relative h-40 sm:h-48 w-full bg-gradient-to-br from-[#001d3d] via-[#072a4e] to-[#00152b] overflow-hidden" id="tab-hero-banner">
         
-        {/* The generated photorealistic header image */}
-        <img 
-          src={tabBannerImages[activeTab]} 
-          alt={tabNames[activeTab]} 
-          referrerPolicy="no-referrer"
-          className="w-full h-full object-cover object-center opacity-40 select-none scale-102 hover:scale-100 transition-transform duration-[3000ms]"
-          id="tab-hero-image"
-        />
-
-        {/* Diagonal Steel Mesh Overlay (CSS patterned mesh to enhance industrial quality) */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/50 to-slate-950/20 mix-blend-multiply" />
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#002d62]/30 to-transparent pointer-events-none" />
-
+        {/* Subtle decorative vector line grid representation */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:14px_24px]" />
+        
         {/* Banner text info overlay */}
-        <div className="absolute inset-x-0 bottom-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-5 sm:pb-6 text-left" id="banner-text-overlay">
+        <div className="absolute inset-x-0 bottom-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-5 sm:pb-6 text-left animate-fade-in" id="banner-text-overlay">
           
           <div className="bg-[#ff8c00] text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-0.5 rounded-sm inline-block mb-2 shadow-sm">
             SAIL CENTRAL INVENTORY REGISTRY &bull; OFFICIAL
