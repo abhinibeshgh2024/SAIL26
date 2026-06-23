@@ -1,0 +1,6 @@
+{
+  "name": "SAIL Inventory Management Portal",
+  "description": "An enterprise-grade inventory, order issuing, alerts, and analytics dashboard for the Steel Authority of India Limited (SAIL) departmental admin division, featuring secure user management and tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
